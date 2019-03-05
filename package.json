@@ -1,0 +1,22 @@
+{
+  "name": "@zisaid/utils",
+  "version": "1.0.0",
+  "description": "utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zisaid/utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "zisaid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zisaid/utils/issues"
+  },
+  "homepage": "https://github.com/zisaid/utils#readme"
+}
