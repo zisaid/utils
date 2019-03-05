@@ -1,1 +1,1 @@
-console.log('hello utils');
+module.exports = require('./lib');
