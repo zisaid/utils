@@ -3,8 +3,8 @@
 > crypto 文本加密解密        
 > data 日期扩展       
 > file 文件操作扩展      
-> ip ip地址工具
-> log 日志工具
+> ip ip地址工具          
+> log 日志工具          
 
 ## text
 
@@ -31,5 +31,6 @@
 
 ## log
 
+- CreateNomalLogServer('/data/test', 3109) 服务器形式开启服务
 - save(appid, userid, type, info, basePath, req) 快速存储日志
 
