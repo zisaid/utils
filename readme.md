@@ -24,6 +24,7 @@
 
 - makePath(prePath, appid, userid) 根据用户信息拼接用户目录并创建
 - mkDirs(dirpath) 递归方式创建目录
+- getAllFiles(dirpath) 指定目录下的所有文件，包括子目录
 
 ## ip
 
@@ -33,4 +34,5 @@
 
 - CreateNomalLogServer('/data/test', 3109) 服务器形式开启服务
 - save(appid, userid, type, info, basePath, req) 快速存储日志
+- read(appid, userid, type, start, number, basePath) 取指定位置日志
 
