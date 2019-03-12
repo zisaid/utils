@@ -34,5 +34,6 @@
 
 - CreateNomalLogServer('/data/test', 3109) 服务器形式开启服务
 - save(appid, userid, type, info, basePath, req) 快速存储日志
-- read(appid, userid, type, start, number, basePath) 取指定位置日志
-
+- readByNumber(appid, userid, type, start, number, basePath) 取指定位置日志
+- readByDay
+- saveMemLog
