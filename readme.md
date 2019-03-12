@@ -1,7 +1,7 @@
 # 功能列表
 > text 文本处理            
 > crypto 文本加密解密        
-> data 日期扩展       
+> date 日期扩展       
 > file 文件操作扩展      
 > ip ip地址工具          
 > log 日志工具          
@@ -15,7 +15,7 @@
 
 - md5(str) 对字符串做MD5加密
 
-## data
+## date
 
 - timestamp 时间戳
 - Format 类似于'YYYY/MM/DD hh:mm:ss S'的形式返回时间 
