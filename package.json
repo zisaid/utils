@@ -1,6 +1,6 @@
 {
   "name": "@zisaid/utils",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "utils",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/zisaid/utils.git"
   },
   "keywords": [
-    "utils", "crypto", "data", "file", "log", "text"
+    "utils", "crypto", "date", "file", "log", "text"
   ],
   "author": "zisaid",
   "license": "MIT",
