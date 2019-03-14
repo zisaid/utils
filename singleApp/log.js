@@ -25,7 +25,7 @@ let makePath = function (prePath, appid, userid, type) {
     return result;
 };
 
-let getAllFiles = function(dirpath, files = []){
+let getAllFiles = function (dirpath, files = []) {
     let dir = fs.readdirSync(dirpath);
     dir.forEach(value => {
         let p = path.format({root: dirpath, base: value});
@@ -114,12 +114,14 @@ let readByDay = function (appid, userid, type, day, basePath) {
 };
 
 let saveMemLog = function () {
+    console.log(new Date());
     let count = 0;
     for (let path in memLog) {
         fs.appendFileSync(path + memLog[path].date + '.txt', memLog[path].value.join('\n') + '\n');
         delete memLog[path];
         count++;
     }
+    save('SYSTEM', 0, 'crond', 'save' + count, basePath);
     return ('save ' + count.toString() + ' to file done.');
 };
 
@@ -183,3 +185,15 @@ http.createServer(function (request, response) {
     console.timeEnd(request.url);
 }).listen(port, '0.0.0.0');
 console.log('Log Server running at http://127.0.0.1:' + port + '/');
+
+function crond() {
+    setInterval(saveMemLog, 86400000); // 24 * 60 * 60 * 1000
+    saveMemLog();
+}
+
+let date = new Date();
+setTimeout(crond,
+    (new Date(date.getFullYear(),
+        date.getMonth(),
+        date.getDate() + 1,
+        1, 0, 0, 0)).valueOf() - date.valueOf());
