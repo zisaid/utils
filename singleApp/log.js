@@ -21,17 +21,18 @@ let makePath = function (prePath, appid, userid, type) {
         + temp.substr(temp.length - 3, 3) + '/'
         + userid + '/'
         + type + '/');
-    mkDirs(result);
     return result;
 };
 
 let getAllFiles = function (dirpath, files = []) {
-    let dir = fs.readdirSync(dirpath);
-    dir.forEach(value => {
-        let p = path.format({root: dirpath, base: value});
-        let stat = fs.statSync(p);
-        if (!stat.isDirectory()) files.push(p);
-    });
+    if(fs.existsSync(dirpath)) {
+        let dir = fs.readdirSync(dirpath);
+        dir.forEach(value => {
+            let p = path.format({root: dirpath, base: value});
+            let stat = fs.statSync(p);
+            if (!stat.isDirectory()) files.push(p);
+        });
+    }
     return files;
 };
 
@@ -57,15 +58,16 @@ let save = function (appid, userid, type, info, basePath, req) {
         info: info
     };
     let path = makePath(basePath, appid, userid, type);
+
     let month = '0' + (date.getMonth() + 1);
     let day = '0' + date.getDate();
-
     let dateNow = date.getFullYear()
         + month.substr(month.length - 2, 2)
         + day.substr(day.length - 2, 2);
     let strLog = JSON.stringify(logs);
     if (memLog[path]) {
         if (memLog[path].date !== dateNow) {
+            mkDirs(path);
             fs.appendFile(path + memLog[path].date + '.txt', memLog[path].value.json('\n') + '\n', err => {
                 if (err) console.log(err);
             });
@@ -114,14 +116,14 @@ let readByDay = function (appid, userid, type, day, basePath) {
 };
 
 let saveMemLog = function () {
-    console.log(new Date());
     let count = 0;
     for (let path in memLog) {
+        mkDirs(path);
         fs.appendFileSync(path + memLog[path].date + '.txt', memLog[path].value.join('\n') + '\n');
         delete memLog[path];
         count++;
     }
-    save('SYSTEM', 0, 'crond', 'save' + count, basePath);
+    save('SYSTEM', 0, 'crond', 'save ' + count, basePath);
     return ('save ' + count.toString() + ' to file done.');
 };
 
