@@ -4,7 +4,6 @@
 > date 日期扩展       
 > file 文件操作扩展      
 > ip ip地址工具          
-> log 日志工具          
 
 ## text
 
@@ -29,11 +28,3 @@
 ## ip
 
 - remote(req) 根据http请求获得客户端ip地址
-
-## log
-
-- CreateNomalLogServer('/data/test', 3109) 服务器形式开启服务
-- save(appid, userid, type, info, basePath, req) 快速存储日志
-- readByNumber(appid, userid, type, start, number, basePath) 取指定位置日志
-- readByDay
-- saveMemLog

@@ -1,15 +1,15 @@
-const text = require('./lib/text');
+const nlp = require('../nlp/index');
 const crypto = require('./lib/crypto');
-const log = require('./lib/log');
 const date = require('./lib/date');
 const file = require('./lib/file');
 const ip = require('./lib/ip');
+const text = require('./lib/text');
 
 module.exports = {
-    text: text,
+    nlp: nlp,
     crypto: crypto,
-    log: log,
     date: date,
     file: file,
-    ip: ip
+    ip: ip,
+    text: text
 };
