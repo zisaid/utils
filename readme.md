@@ -1,3 +1,6 @@
+# 日志
+- 1.2.1 crypto增加unicode
+
 # 功能列表
 > text 文本处理            
 > crypto 文本加密解密        
@@ -13,6 +16,7 @@
 ## crypto
 
 - md5(str) 对字符串做MD5加密
+- unicode(key) 产生一个标识码
 
 ## date
 
@@ -21,7 +25,7 @@
 
 ## file
 
-- makePath(prePath, appid, userid) 根据用户信息拼接用户目录并创建
+- makePath(prePath, appid, userid) 根据用户信息拼接用户目录
 - mkDirs(dirpath) 递归方式创建目录
 - getAllFiles(dirpath) 指定目录下的所有文件，包括子目录
 

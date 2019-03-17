@@ -1,6 +1,6 @@
 {
   "name": "@zisaid/utils",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "utils",
   "main": "index.js",
   "scripts": {
